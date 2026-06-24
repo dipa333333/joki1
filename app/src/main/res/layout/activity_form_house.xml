@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data Properti"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#567bb8"
+        android:layout_marginBottom="24dp"/>
+
+    <ImageView
+        android:id="@+id/ivFormPreview"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btnPickImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PILIH GAMBAR DARI GALERI"
+        android:backgroundTint="#808080"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etFormTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Judul Rumah (ex: Villa Bali)"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etFormPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Harga (ex: $ 500.000)"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etFormDesc"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:hint="Deskripsi lengkap..."
+        android:gravity="top|start"
+        android:inputType="textMultiLine"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnSaveHouse"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="#567bb8"
+        android:textColor="#FFFFFF"
+        android:text="SIMPAN DATA"/>
+</LinearLayout>

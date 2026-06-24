@@ -2,6 +2,7 @@ package com.example.test;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,15 +35,20 @@ public class HouseAdapter extends RecyclerView.Adapter<HouseAdapter.HouseViewHol
 
         holder.tvHouseTitle.setText(house.getTitle());
         holder.tvHousePrice.setText(house.getPrice());
-        holder.ivHouseImage.setImageResource(house.getImageResId());
 
-        // LOGIKA KLIK MENUJU HALAMAN DETAIL
+        // Cek apakah gambar URI tersedia dari galeri
+        if (house.getImageUri() != null && !house.getImageUri().isEmpty()) {
+            holder.ivHouseImage.setImageURI(Uri.parse(house.getImageUri()));
+        } else {
+            // Gambar default jika user tidak memilih foto
+            holder.ivHouseImage.setImageResource(R.mipmap.ic_launcher);
+        }
+
+        // Logic klik untuk pergi ke DetailActivity
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Siapkan Intent menuju DetailActivity
                 Intent intent = new Intent(context, DetailActivity.class);
-                // Kirim objek 'house' yang diklik
                 intent.putExtra("EXTRA_HOUSE", house);
                 context.startActivity(intent);
             }
